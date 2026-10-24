@@ -26,3 +26,55 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 ## AutoTradeHub
+
+
+
+Basic commands to create an angular application-: **npx -p @angular/cli ng new app --no-standalone** 
+
+npm init -y 
+ 
+npm i mongoose
+
+npm i express
+
+npm i nodemon
+
+npm i cors
+
+npm i axios
+
+In mongodb, added connection -> localhost:27017
+
+To continue running backend :nodemon api.js
+
+To start angular application :npm run start
+
+To run backend -> cd .\backend
+
+>> node .\API\mainAPI.js
+listening on port 4000, database connected
+
+In other terminal, to run frontend -> npm install, npm run start
+  
+  ➜  Local:   http://localhost:4200/
+  
+  ➜  press h + enter to show help
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
