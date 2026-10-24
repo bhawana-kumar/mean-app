@@ -1,0 +1,72 @@
+<div class="mainContainer ">
+    <h1 class="headerCM">Reports Management</h1>
+    <div class="mainContent">
+
+        <div class="header_wrap">
+            <div class="num_rows">
+                <div class="form-group"> 
+                    <select class="form-control" name="state" #maxRowsDropdown (change)="onDropdownChange()">
+                        <option value="10" selected>10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="70">70</option>
+                        <option [value]="totalRows">Show ALL Rows</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="tb_search">
+                <input type="text" id="search_input_all" (keyup)="searchFilter_all_table()" [(ngModel)]="searchKeyword"
+                    placeholder="Search.." class="form-control">
+            </div>
+        </div>
+        
+        <div class="userInfoContainer">
+
+
+            <table class="userInfoTable">
+
+                <tr class="stickyHeader">
+                    <th>Vehicle RN</th>  
+                    <!-- registraion no -->
+                    <th>Seller</th>
+                    <th>Buyer</th>
+                    <th>Commnents</th>
+                    <th></th>
+                </tr>
+
+                <tr class="userRows" *ngFor="let report of filtredData">
+                    <td>{{report.vehicleId}} </td>
+                    <td (click)="UserDetails(report.sellerId)" class="clickable" matTooltip=" Go To Seller" matTooltipShowDelay="1000">
+                        {{report.sellerName}} 
+                    </td>
+                    <td (click)="UserDetails(report.buyerId)" class="clickable" matTooltip=" Go To Buyer" matTooltipShowDelay="1000">
+                        {{report.buyerName}} 
+                    </td>
+                   
+                    <td>{{report.comment }}</td>
+                    <td *ngIf="report.resolved == false">
+                        <button mat-raised-button color="warn" matTooltip="Take Action" matTooltipShowDelay="1000" (click)="vehicleDetails(report.vehicleId)" >Action</button></td>
+                    <td *ngIf="report.resolved"><button mat-raised-button color="success" disabled>Resolved</button></td>
+                   
+                </tr>
+
+
+            </table>
+        </div>
+    
+        <div class='pagination-container'>
+          
+                <ul class="pagination">
+                    <span *ngFor="let i of getRange()"> 
+                        <button  mat-raised-button class="pagination-btn" (click)="onPageChange(i+1)" [class.activeBtn]="currentPage === i+1">{{i + 1}}</button>
+                    </span>                    
+                    
+                </ul>
+           
+        </div>
+        <!-- <div class="rows_count">Showing 11 to 20 of 91 entries</div> -->
+    </div>
+
+</div>

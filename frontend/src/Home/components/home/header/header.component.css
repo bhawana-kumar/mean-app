@@ -1,0 +1,106 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css");
+.custom-navbar {
+    height: 88px;
+    /* background-color:#; */
+    color: black;
+   position: relative;
+}
+.navbar>.container-fluid{
+    background-color: #EEEEEE;
+}
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link:focus {
+    color: black; 
+}
+.custom-navbar .navbar-brand,
+.custom-navbar {
+    color: #966363; 
+}
+
+.nav-link-5{
+    cursor:pointer;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-brand {
+    color: #3399CC;
+    font-size: 1.6rem;
+}
+
+.navbar-brand i {
+    font-size: 2rem;
+}
+
+.container-fluid {
+    max-width: 1770px;
+}
+
+.nav-item {
+    margin-right: 30px;
+}
+
+.nav-item:last-child {
+    margin-right: 0;
+}
+
+.nav-link {
+    color: black;
+    border-bottom: 4px solid transparent;
+    font-size: 1.2rem;
+}
+
+.nav-link-1.active,
+.nav-link-1:hover {
+    border-color: #33CCFF;
+}
+
+.nav-link-2.active,
+.nav-link-2:hover {
+    border-color: #FF6666;
+}
+
+.nav-link-3.active,
+.nav-link-3:hover {
+    border-color: #33CC66;
+}
+
+.nav-link-4.active,
+.nav-link-4:hover {
+    border-color: #CC66CC;
+}
+
+.nav-link-5.active,
+.nav-link-5:hover {
+    border-color: #1e06d0;
+}
+
+.navbar-nav {
+    margin-left: 880px;
+}
+
+.nav-img{
+    height: 30px;
+}
+@media (max-width: 991px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 50px;
+        right: 0px;
+        /* background: white; */
+        width: 250px;
+        padding: 15px;
+        overflow-y: auto;
+        z-index: 1000;
+
+    }
+
+    .navbar-nav {
+        margin-left: 0;
+    }
+}
+
+
+ 

@@ -1,0 +1,18 @@
+<div class="chartContainer">
+  <mat-select [(ngModel)]="choosedFilter"  (ngModelChange)="onFilterChange()">
+    <mat-option *ngFor="let filter of filters" [value]="filter.value">
+      {{ filter.viewValue }}
+    </mat-option>
+  </mat-select>
+  <canvas baseChart
+  
+  [data]="barChartData"
+  [options]="barChartOptions"
+  [plugins]="barChartPlugins"
+  [legend]="barChartLegend"
+  [type]="'bar'"
+  style="fill: #570d0d;"
+  >
+</canvas>
+    
+</div>

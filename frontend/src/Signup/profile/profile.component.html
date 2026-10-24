@@ -1,0 +1,63 @@
+<app-header></app-header>
+<div class="maincontainer">
+  <div class="container" *ngIf="currentUser">
+    <div class="row">
+      <div class="profile-nav col-md-3">
+        <div class="panel">
+          <div class="user-heading">
+            <a >
+              <img src="../../assets/images/avatar_2x.jpg" alt="">
+            </a>
+            <h3>Welcome, <strong>{{ currentUser.username }}</strong></h3>
+          </div>
+
+          <div class="difftabs">
+            <ul class="nav nav-pills nav-stacked">
+              <li>
+                <a (click)="showTab(1)">
+                  <i class="fa fa-user"></i> View Profile
+                </a>
+              </li>
+              <li>
+                <a (click)="showTab(3)">
+                  <i class="fa fa-cog"></i> Profile Settings
+                </a>
+              </li>
+              <li>
+                <a (click)="showTab(4)">
+                  <i class="fa fa-history"></i> Your Order History
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="SideComponent col-md-9">
+        <div *ngIf="selectedTab === 1">
+          <app-view-profile [user]="currentUser"></app-view-profile>
+        </div>
+        <!-- <div *ngIf="selectedTab === 2">
+          <app-shortlisted-vehicles></app-shortlisted-vehicles>
+        </div> -->
+        <div *ngIf="selectedTab === 3">
+          <app-profile-settings [user1]="currentUser"></app-profile-settings>
+        </div>
+        <div *ngIf="selectedTab === 4">
+          <app-your-order-history></app-your-order-history>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="!currentUser">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-warning" role="alert">
+        Please login to access your profile.
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

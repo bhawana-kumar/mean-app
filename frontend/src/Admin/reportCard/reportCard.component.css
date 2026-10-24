@@ -1,0 +1,27 @@
+.reportCard {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 500px;
+    padding: 15px;
+    margin: 10px;
+    background-color: rgb(248, 248, 248);
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+
+}
+
+.pointer{
+    cursor: pointer;
+}

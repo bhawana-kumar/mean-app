@@ -1,0 +1,81 @@
+<app-header></app-header>
+<div *ngIf="car" class="img-info-container">
+  <div class="car-img">
+    <img [src]="car.carImg" class="car-image">
+  </div>
+
+  <div class="car-details-main">
+    <div class="car-details">
+
+      <i class="fa fa-flag flag" aria-hidden="true" (click)="toggleReportButton(car._id)">Report</i>
+
+    </div>
+    <span class="tooltip-name">
+      <h1>{{car.carName}}</h1><br>
+      <span class="tooltiptext">{{car.description}}</span>
+    </span>
+    <h2 class="detail">Body Type : {{car.bodyType }}</h2>
+    <h2 class="detail">Fuel Type : {{ car.fuelType }}</h2>
+    <h2 class="detail">Manufacturing Year : {{car.manufYear }}</h2>
+    <h2 class="detail">Ownership: {{car.ownerShip }}</h2>
+    <h2>Identification Number :{{car.identification_number}}</h2>
+    <h2 class="detail">Status : {{car.status }}</h2>
+    <h2>&#8377; Price: {{car.price }}</h2>
+
+    <app-payment></app-payment>
+
+  </div>
+</div>
+
+<br>
+
+<div class="tech-info-main"><br>
+  <h3 class="key-specs">Key Specs of &nbsp;{{car.carName}}</h3>
+  <div class="tech-info">
+    <div class="left-info">
+      <p>Engine &nbsp;&nbsp;&nbsp; <b>{{car.engine}}</b></p>
+      <hr>
+      <p>Torque &nbsp;&nbsp;&nbsp;<b>{{car.torque}}</b></p>
+      <hr>
+      <p>Drive Type &nbsp;&nbsp;&nbsp; <b>{{car.driveType}}</b></p>
+      <hr>
+    </div>
+    <div class="right-info">
+      <p>Power &nbsp;&nbsp;&nbsp; <b>{{car.power}}</b></p>
+      <hr>
+      <p>Seating Capacity &nbsp;&nbsp;&nbsp; <b>{{car.seatingCapacity}}</b></p>
+      <hr>
+      <p>Mileage &nbsp;&nbsp;&nbsp; <b>{{car.mileage}}</b></p>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<div class="car-desc">
+  <h3 style="font-weight: bold; color: brown; font-size: 205%; margin-bottom: 2%;">More about {{car.carName}}</h3>
+  <p style="font-size: 120%;"> {{car.description}}</p><br><br>
+  <div class="tech-info">
+    <div class="left-info">
+      <p>Body Type &nbsp;&nbsp;&nbsp; <b>{{car.bodyType}}</b></p>
+      <hr>
+      <p>color &nbsp;&nbsp;&nbsp;<b>{{car.color}}</b></p>
+      <hr>
+      <p>Identification No. &nbsp;&nbsp;&nbsp; <b>{{car.identification_number}}</b></p>
+      <hr>
+    </div>
+    <div class="right-info">
+      <p>Ownership &nbsp;&nbsp;&nbsp; <b>{{car.ownerShip}}</b></p>
+      <hr>
+      <p>fuel Type &nbsp;&nbsp;&nbsp; <b>{{car.fuelType}}</b></p>
+      <hr>
+      <p>Manufacturing Year &nbsp;&nbsp;&nbsp; <b>{{car.manufYear}}</b></p>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<div class="recommended-cars">
+  <app-recommended></app-recommended>
+</div>
+
+<app-footer></app-footer>

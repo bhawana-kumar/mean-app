@@ -1,0 +1,72 @@
+  .user-heading {
+  background-color: #3498db;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.user-heading img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+
+.user-heading h1 {
+  margin-top: 10px;
+}
+
+.difftabs {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding: 20px;
+}
+
+.difftabs ul {
+  list-style: none;
+  padding: 0;
+}
+
+.difftabs li {
+  margin-bottom: 10px;
+}
+
+.difftabs a {
+  text-decoration: none;
+  color: #333;
+}
+
+.difftabs a:hover {
+  color: #555;
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav li:hover{
+  cursor: pointer;
+}
+
+.SideComponent {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.nav li a {
+  padding: 5px 10px;
+}
+
+.nav li a:hover{
+  background-color: #3498db;
+}
+
+.active {
+  color:blue;
+}

@@ -1,0 +1,87 @@
+/* .vehicle-card .card-body {
+    padding: 20px;
+}
+
+.vehicle-card .card-title {
+    font-size: 3rem;
+}
+
+.vehicle-card .card-text {
+    font-size: 1.9rem;
+    margin-top: 30px;
+}
+
+.btn-primary.btn-lg {
+    padding: 1.25rem 2.25rem;
+    font-size: 1.2rem;
+    border-radius: 0.3rem;
+    margin-top: 55px;
+}
+.card{
+    background-color: rgba(246, 220, 220, 0.672);
+    border: black;
+    border-radius: 15px; 
+    overflow: hidden; 
+}
+  
+.card img {
+    border-top-left-radius: 15px; 
+    border-bottom-left-radius: 15px; 
+}
+   */
+
+   .card{
+    /* background-color: rgba(246, 220, 220, 0.672); */
+    border: black;
+    background-color: black;
+    border-radius: 15px; 
+    overflow: hidden; 
+    color:silver;
+
+}
+.vehicle-card .card {
+    /* background-color: rgba(246, 220, 220, 0.67); */
+    background-color: silver;
+    border: 1px solid black;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.vehicle-card .card img {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    /* border-radius: 25px; */
+}
+
+
+.vehicle-card .card-body {
+    padding: 20px;
+}
+
+.vehicle-card .card-title {
+    font-size: 2rem;
+}
+
+
+.vehicle-card .card-text {
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+
+.btn-primary.btn-lg {
+
+    font-size: 1.2rem;
+    border-radius: 0.3rem;
+    color: white;
+    background-color: brown;
+
+}
+
+@media (max-width: 768px) {
+    .btn-primary.btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        margin-top: 20px;
+    }
+}

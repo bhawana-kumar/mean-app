@@ -1,0 +1,35 @@
+<div class="mainContainer ">
+    <h1 class="headerCM">Vehicle Details</h1>
+    <div class="mainContent">
+       
+        <vehicle-card [vehicleData]="vehicleData"></vehicle-card>
+        <button mat-raised-button id="deleteBtn" color="yellow" *ngIf="reportsDataLength != 0"  class="btn btn-sm btn-block btnUserB"(click)="openDialog()" >
+            Delete vehicle
+        </button>
+
+        <div class="reports">
+            
+            <div *ngIf="reportsDataLength != 0">
+                <h2 style="color:#DA932C;">Reports</h2>
+                <report-card [reportsData]="reportsData"></report-card>
+            </div>
+            <div *ngIf="reportsDataLength == 0" style="color:white">
+                No Reports Found
+            </div>
+        </div>
+
+        <div class="orders">
+            <div *ngIf="orderDataLoaded">
+                <h2 style="color:#DA932C;">Orders</h2>
+                <orderReceipt-component [receiptsData]="orderData"></orderReceipt-component>
+            </div>
+            <div *ngIf="!orderData">
+                No Reports Found
+            </div>
+        </div>
+        
+
+    </div>
+
+    
+</div>

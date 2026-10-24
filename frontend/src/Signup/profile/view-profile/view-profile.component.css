@@ -1,0 +1,32 @@
+/*changed css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px; /* Adjust as needed */
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.profile-info {
+    margin-top: 20px;
+}
+
+.profile-info label {
+    font-weight: bold;
+}
+
+.profile-info p {
+    margin: 5px 0;
+}

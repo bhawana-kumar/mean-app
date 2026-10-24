@@ -1,0 +1,148 @@
+<div class="button-container">
+  <div class="filter-tags" [ngClass]="{ 'open': filterOpen }">
+    <button *ngFor="let color of colors" class="filter-button" [class.selected]="selectedcolors.includes(color)" (click)="togglecolor(color)">
+      {{ color }}
+    </button>
+  </div>
+</div>
+
+
+<div class="selected-filters">
+    <div class="chip" *ngFor="let bodyType of selectedbodyTypes">
+      {{ bodyType }}
+      <button (click)="removebodyType(bodyType)" style="border: none;">X</button>
+    </div>
+    <div class="chip" *ngFor="let location of selectedlocations">
+      {{ location }}
+      <button (click)="removelocation(location)" style="border: none;">X</button>
+    </div>
+    <div class="chip" *ngFor="let brandName of selectedbrandNames"> 
+      {{ brandName }}
+      <button (click)="removebrandName(brandName)" style="border: none;">X</button>
+    </div> 
+    <div class="chip" *ngFor="let fuelType of selectedfuelTypes"> 
+      {{ fuelType }}
+      <button (click)="removefuelType(fuelType)" style="border: none;">X</button>
+    </div>
+    <div class="chip" *ngFor="let driveType of selecteddriveTypes"> 
+      {{ driveType }}
+      <button (click)="removedriveType(driveType)" style="border: none;">X</button>
+    </div>
+    <div class="chip" *ngFor="let range of selectedPriceRanges"> 
+      {{ range }}
+      <button (click)="removePriceRange(range)" style="border: none;">X</button>
+    </div>
+  </div>
+  
+  
+  <div class="combine-filter">
+  <div class="filter-container">
+    
+    <div class="filter-container-1">
+      <h2 (click)="toggleFilter()">Filter by Body Type <span class="toggle-icon">{{ filterOpen ? '-' : '+' }}</span></h2>
+      <div class="filter-body" [ngClass]="{ 'open': filterOpen }">
+        <div *ngFor="let bodyType of bodyTypes">
+          <label>
+            <input type="checkbox" [value]="bodyType" (change)="togglebodyType(bodyType)" [checked]="selectedbodyTypes.includes(bodyType)">
+            {{ bodyType }}
+          </label>
+        </div> 
+      </div>
+    </div>
+
+    <div class="filter-container-1">
+      <h2 (click)="togglelocationFilter()">Filter by location <span class="toggle-icon">{{ filterOpen ? '-' : '+' }}</span></h2>
+      <div class="filter-body" [ngClass]="{ 'open': locationFilterOpen }">
+        <div *ngFor="let location of locations">
+          <label>
+            <input type="checkbox" [value]="location" (change)="togglelocation(location)" [checked]="selectedlocations.includes(location)">
+            {{ location }}
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="filter-container-1">
+      <h2 (click)="toggleBrandFilter()">Filter by Brand <span class="toggle-icon">{{ brandFilterOpen ? '-' : '+' }}</span></h2>
+      <div class="filter-body" [ngClass]="{ 'open': brandFilterOpen }">
+        <div *ngFor="let brandName of brandNames">
+          <label>
+            <input type="checkbox" [value]="brandName" (change)="togglebrandName(brandName)" [checked]="selectedbrandNames.includes(brandName)">
+            {{ brandName }}
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="filter-container-1">
+      <h2 (click)="toggleFuleFilter()">Fuel Type <span class="toggle-icon">{{ fuelFilterOpen ? '-' : '+' }}</span></h2>
+      <div class="filter-body" [ngClass]="{ 'open': fuelFilterOpen }">
+        <div *ngFor="let fuelType of fuelTypes">
+          <label>
+            <input type="checkbox" [value]="fuelType" (change)="togglefuelType(fuelType)" [checked]="selectedfuelTypes.includes(fuelType)">
+            {{ fuelType }}
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="filter-container-1">
+      <h2 (click)="toggleDriveFilter()">Drive Type <span class="toggle-icon">{{ driveFilterOpen ? '-' : '+' }}</span></h2>
+      <div class="filter-body" [ngClass]="{ 'open': driveFilterOpen }">
+        <div *ngFor="let driveType of driveTypes">
+          <label>
+            <input type="checkbox" [value]="driveType" (change)="toggledriveType(driveType)" [checked]="selecteddriveTypes.includes(driveType)">
+            {{ driveType }}
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="filter-container-1 price-range-filter">
+      <h2 (click)="togglePriceFilter()">Price Range <span class="toggle-icon">{{ priceFilterOpen ? '-' : '+' }}</span></h2>
+      <div class="filter-body" [ngClass]="{ 'open': priceFilterOpen }">
+       
+      <input type="checkbox" (change)="togglePriceRange('2-5L')" [checked]="selectedPriceRanges.includes('2-5L')">
+      2-5L <br>
+      <input type="checkbox" (change)="togglePriceRange('5-10L')" [checked]="selectedPriceRanges.includes('5-10L')">
+      5-10L <br>
+      <input type="checkbox" (change)="togglePriceRange('10-15L')" [checked]="selectedPriceRanges.includes('10-15L')">
+      10-15L <br>
+      <input type="checkbox" (change)="togglePriceRange('15-30L')" [checked]="selectedPriceRanges.includes('15-30L')">
+      15-30L <br>
+      <input type="checkbox" (change)="togglePriceRange('30L and above')" [checked]="selectedPriceRanges.includes('30L and above')">
+      30L and above
+    </div>
+  </div>
+</div>
+
+<div class="filtered-results">
+  <span style=" font-weight: bold; font-size: 35px; margin-left: 35%;" class="our">Our </span>
+  <span style=" font-weight: bold; color: orange; font-size: 35px;" class="our">Collections </span>
+
+  <div class="row tm-mb-90 tm-gallery px-4">
+    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5" *ngFor="let car of paginatedCars">
+        <figure class="effect-ming tm-video-item" (click)="goToCardDetail(car._id)"> 
+            <img [src]="car.carImg" alt="Image" class="img-fluid">
+            <figcaption class="d-flex align-items-center justify-content-center">
+                <h2>{{ car.brandName }}</h2>
+            </figcaption>
+        </figure>
+        <div class="d-flex justify-content-between tm-text-gray">
+            <span class="tm-text-gray-light">{{ car.carName }}</span>
+            <span>{{ car.price }}</span>
+        </div>
+    </div> 
+</div>
+
+  <div class="pagination-controls">
+      <button (click)="previousPage()" [disabled]="currentPage == 1" class="page-buttons">Previous</button>
+  
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages()" class="page-buttons">Next</button>
+
+  </div>
+</div>
+</div>
+ 
+<div class="recommended-cars">
+  <app-recommended></app-recommended>
+</div>
+

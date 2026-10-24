@@ -1,0 +1,153 @@
+<form [formGroup]="vehicleForm" (ngSubmit)="updateVehicleDetails()" class="edit-product-form">
+    <div>
+      <label for="identification_number">Identification Number:</label>
+      <input type="text" id="identification_number" placeholder="Identification Number" formControlName="identification_number" required>
+    </div>
+    <div>
+      <label for="registration_num ber">Registration Number:</label>
+      <input type="text" id="registration_number" placeholder="Registration Number" formControlName="registration_number" required>
+    </div>
+  
+    <div>
+      <label for="location">Location:</label>
+      <input type="text" id="location" placeholder="Location" formControlName="location" required>
+    </div>
+  
+    <div class="brand"> 
+      <label for="brandName">Select Vehicle Brand:&nbsp;&nbsp; </label> 
+      <select id="brandName" formControlName="brandName">
+        <option value="Toyota">Toyota</option>
+        <option value="Volkswagen">Volkswagen</option>
+        <option value="Ford">Ford</option>
+        <option value="Honda">Honda</option>
+        <option value="Chevrolet">Chevrolet</option>
+        <option value="Mercedes-Benz">Mercedes-Benz</option>
+        <option value="BMW">BMW</option>
+        <option value="Audi">Audi</option>
+        <option value="Tesla">Tesla</option>
+        <option value="Nissan">Nissan</option>
+        <option value="Hyundai">Hyundai</option>
+        <option value="Kia">Kia</option>
+        <option value="Suzuki">Suzuki</option>
+        <option value="Yamaha">Yamaha</option>
+      </select>
+    </div>
+    
+    <div>
+      <label for="carName">Specify Vehicle Model</label>
+      <input type="text" id="carName" placeholder="Toyota Corolla" formControlName="carName" required>
+    </div>
+    <div>
+      <label for="manufYear">Manufacturing Year:</label>
+      <input type="number" id="manufYear" formControlName="manufYear" required>
+    </div>
+  
+    <div class="condition">
+      <label>Ownership:</label>
+      <div>
+        <input type="radio" id="first" name="ownerShip" value="First" formControlName="ownerShip">
+        <label for="first">First</label>
+      </div>
+      <div>
+        <input type="radio" id="second" name="ownerShip" value="Second" formControlName="ownerShip">
+        <label for="second">Second</label>
+      </div>
+      <div>
+        <input type="radio" id="third" name="ownerShip" value="Third" formControlName="ownerShip">
+        <label for="third">Third</label>
+      </div>
+    </div>
+  
+    <div class="condition">
+      <label>Drive type:</label>
+      <div *ngFor="let driveType of ['FWD', 'RWD', 'AWD', '4WD']">
+        <input type="radio" [id]="driveType" [name]="'driveType'" [value]="driveType" formControlName="driveType">
+        <label [for]="driveType">{{ driveType }}</label>
+      </div>
+    </div>
+
+     <div>
+      <label for="image" class="image">Upload Image</label>
+      <input type="file" id="image" (change)="onImageSelected($event)" accept="image/*" formControlName="carImg">
+      <!-- Display preview of the selected image -->
+      <img *ngIf="imageUrl || vehicleForm.get('carImg')?.value" [src]="imageUrl || vehicleForm.get('carImg')?.value" alt="Selected Image" style="max-width: 200px; max-height: 200px;">
+    </div>
+      
+    <div class="line">
+      <div>
+        <label for="color">Color:</label>
+        <input type="text" id="color" formControlName="color" required>
+      </div>
+      <div class="passenger">
+        <label for="seats">Seats</label>
+        <input type="number" id="seats" placeholder="Total Seats" formControlName="seats" required>
+      </div>
+      <div class="price">
+        <label for="price">Price:</label>
+        <input type="number" id="price" formControlName="price" required>
+      </div>
+    </div>
+    
+    <div class="line">
+      <div>
+        <label for="engine">Engine:</label>
+        <input type="text" id="engine" formControlName="engine" required>
+      </div>
+      <div class="torque">
+        <label for="torque">Torque</label>
+        <input type="text" id="torque" placeholder="torque" formControlName="torque" required>
+      </div>
+    </div>
+  
+    <div class="fuel_type">
+      <label for="fuelType">Select Fuel Variant:&nbsp;&nbsp; </label> 
+      <select id="fuelType" formControlName="fuelType">
+        <option value="Petrol">Gasoline (Petrol)</option>
+        <option value="Diesel">Diesel</option>
+        <option value="Biofuels">Biofuels</option>
+        <option value="NG">Natural Gas</option>
+        <option value="HEV">Hybrid Electric Vehicles </option>
+        <option value="PHEV">Plug-in Hybrid Electric Vehicles </option>
+        <option value="BEV">Battery Electric Vehicles</option>
+        <option value="HFCV">Hydrogen Fuel Cell Vehicles</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="mileage">Specify Vehicle Mileage :</label>
+      <input type="text" id="mileage" placeholder="40 mpg" formControlName="mileage" required>
+    </div>
+  
+    <div>
+      <label for="power">Power:</label>
+      <input type="text" id="power" placeholder="Power" formControlName="power" required>
+    </div>
+    
+    <div class="body_type">
+      <label for="bodyType">Select Body Type:&nbsp;&nbsp; </label> 
+      <select id="bodyType" formControlName="bodyType">
+        <option value="sedan">Sedan</option>
+        <option value="suv">SUV's</option>
+        <option value="hatchback">Hatchback</option>
+        <option value="crossover_suv">Crossover SUV</option>
+        <option value="coupe">Coupe</option>
+        <option value="convertible">Convertible</option>
+        <option value="wagon">Wagon(Esate)</option>
+        <option value="minivan">Minivan</option>
+        <option value="luxury_car">Luxury Car</option>
+        <option value="sports_car">Sports Car</option>
+        <option value="pickup_train">Pickup Train</option>
+        <option value="van">Van</option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="description">Additional Features</label>
+      <input type="text" id="description" placeholder="Additional features" formControlName="description">
+    </div>
+
+  <div class="submit">
+    <button type="submit" value="Update">Update Vehicle</button>
+    <!-- <input type="submit" value="Update vehicle">Update Vehicle -->
+  </div>
+</form>

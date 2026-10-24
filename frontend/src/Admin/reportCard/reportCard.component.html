@@ -1,0 +1,37 @@
+<div class="reportContainer">
+    <mat-card class="reportCard" *ngFor="let report of reportsData">
+        <div class="reportHeader">
+           
+            <div class="info">
+                
+                    <div (click)="UserDetails(report.buyerId)">
+                        <p class="bold">Reported By</p>
+                        <p class="pointer"  matTooltip="Go To Buyer" matTooltipShowDelay="1000" >{{ report.buyerName }}</p>
+                        
+                    </div>
+                    <div (click)="UserDetails(report.sellerId)">
+                        <p class="bold">Reported To</p>
+                        <p class="pointer"  matTooltip="Go To Seller" matTooltipShowDelay="1000">{{ report.sellerName }}</p>
+                    </div>
+                
+            </div>
+            
+               
+            
+        </div>
+        <mat-card-content >
+           <p> 
+            <span class="pointer bold " matTooltip="Go To Vehicle" matTooltipShowDelay="1000" (click)="vehicleDetails(report.vehicleId)">registrationNumber:  </span> <span>{{report.vehicleRegistration}}</span>
+        </p>
+            <div>
+                <p class="bold" >Comment:</p>
+                {{report.comment}}
+            </div>
+        </mat-card-content>
+
+        <mat-card-actions *ngIf="!activatebtn" (click)="vehicleDetails(report.vehicleId)">
+            <button matTooltip="Take Action" matTooltipShowDelay="1000" mat-raised-button color="warn">Action</button>
+
+        </mat-card-actions>
+    </mat-card>
+</div>

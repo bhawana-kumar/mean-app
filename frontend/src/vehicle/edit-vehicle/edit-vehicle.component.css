@@ -1,0 +1,237 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+form {
+  width: 50%;
+  margin: auto;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  border-color: #66afe9;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin-right: 25px;
+  border-radius: 5px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color:  brown;
+}
+
+.img {
+  display: block;
+  margin-top: 10px;
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.condition-options {
+  display: flex;
+  align-items: center;
+}
+
+.condition-options input[type="radio"] {
+  margin-right: 5px;
+}
+
+.fuel_type {
+  display: flex;
+  flex-direction: row;
+}
+
+.fuel_type div {
+  display: flex;
+  align-items: center;
+}
+
+.fuel_type div input[type="radio"] {
+  margin-right: 5px;
+}
+
+.fuel_type div label {
+  color: brown;
+}
+
+/* Style for the div containing label and input */
+div.passenger {
+  margin-bottom: 10px;
+}
+
+/* Style for the label */
+div.passenger label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style for the input */
+div.passenger input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin-left: 15px;
+}
+
+/* Style for the div containing condition radio buttons and labels */
+div.condition {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+/* Style for the labels */
+div.condition label {
+  display: inline;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Style for the radio buttons */
+div.condition input[type="radio"] {
+  margin-right: 5px;
+}
+
+div.price {
+  margin-bottom: 5px;
+  margin-left: 30px;
+}
+
+/* Style for the label */
+div.price label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style for the input */
+div.price input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style for the label */
+label.image {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: green;
+  text-align: center;
+}
+
+/* Style for the file input */
+input[type="file"] {
+  display: none;
+}
+
+/* Hover effect for label */
+label.image:hover {
+  text-decoration: underline;
+  color: blueviolet;
+}
+
+/* Style for the select element */
+#cars {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 15px;
+  width: 100%;
+}
+
+/* Style for the options */
+#cars option {
+  font-size: 16px;
+  background-color: lightgreen;
+  color: black;
+}
+
+.brand {
+  display: inline;
+}
+
+.line {
+  display: flex;
+  width: 100%;
+}
+
+div.contact {
+  margin-bottom: 5px;
+  margin-left: 15px;
+}
+
+/* Style for the label */
+div.contact label {
+  display: block;
+  font-weight: bold;
+}
+
+/* Style for the input */
+div.contact input[type="number"] {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit {
+  padding-top: 15px;
+}
+
+.new {
+  color: darkcyan;
+}
+
+.used {
+  color: darkred;
+}

@@ -1,0 +1,85 @@
+<div class="mainContainer ">
+    <h1 class="headerCM">Orders Management</h1>
+    <div class="mainContent">
+
+        <div class="header_wrap">
+            <div class="num_rows">
+                <div class="form-group"> 
+                    <select class="form-control" name="state" #maxRowsDropdown (change)="onDropdownChange()">
+                        <option value="10" selected>10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="70">70</option>
+                        <option value="100">100</option>.
+                        <option value="5000">Show ALL Rows</option>
+                    </select>
+                </div>
+            </div>
+            <div class="searchCon">
+                <div class="form-group"> 
+                    <select class="form-control" name="state" #attributeDropdown (change)="onFilterAttributeChange()">
+                        <option value="_id" selected>Order Id</option>
+                        <option value="vehicle">VRN</option>
+                    </select>
+                </div>
+                <div class="tb_search">
+                    <input type="text" id="search_input_all" (keyup)="applyFilter_all_table()" [(ngModel)]="searchKeyword"
+                        placeholder="Search.." class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="filterContainer">
+            <div>
+                <span>Status: </span>
+            <mat-checkbox [(ngModel)]="deliveredChecked" labelPosition="before" (change)="applyFilter_all_table()">Delivered</mat-checkbox>
+            <mat-checkbox [(ngModel)]="pendingChecked" labelPosition="before" (change)="applyFilter_all_table()">Pending</mat-checkbox>
+            <mat-checkbox [(ngModel)]="otherChecked" labelPosition="before" (change)="applyFilter_all_table()">Other</mat-checkbox>
+            
+            </div>
+            <div class="rows_count">
+                <div>Total Orders: {{filtredData.length}} </div>
+            </div>
+        </div>
+
+        <div class="userInfoContainer">
+            <table matSort (matSortChange)="sortData($event)" class="userInfoTable" id="table-id">
+
+                <tr class="stickyHeader">
+                    <th>Vehicle Reg No</th>
+                    <th>Seller</th>
+                    <th id="mat-sort-header" mat-sort-header="date">Date</th>
+                    <th mat-sort-header="price">Price</th>
+                    <th>Status</th>
+                    
+                </tr>
+
+                <tr class="userRows" *ngFor="let order of displayData" (click)="OrderDetails(order._id)">
+                    <td>{{order.vehicle.registrationNumber}}</td>
+                    <td>
+                        {{order.seller.name | uppercase}}
+                    </td>
+                    <td>{{order.dateTime | date}}</td>
+                    <td>{{order.price}}</td>
+                    <td>{{order.orderStatus}}</td>
+                    
+                </tr>
+
+
+            </table>
+        </div>
+    
+        <div class='pagination-container'>
+          
+                <ul class="pagination">
+                    <span *ngFor="let i of getRange()"> 
+                        <button mat-raised-button (click)="onPageChange(i+1)" [class.activeBtn]="currentPage === i+1">{{i + 1}}</button>
+                    </span>                    
+                    
+                </ul>
+           
+        </div>
+        <!-- <div class="rows_count">Showing 11 to 20 of 91 entries</div> -->
+    </div>
+
+</div>

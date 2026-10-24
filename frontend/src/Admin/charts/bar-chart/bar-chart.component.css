@@ -1,0 +1,28 @@
+.chartContainer{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.chartContainer mat-select {
+    font-size: 16px;
+    width:130px;
+    margin-right: 25px;
+    color:white;
+}
+
+.chartContainer canvas {
+    max-height: 250px;
+    width: auto;
+}
+
+mat-select {
+    /* background-color:red; */
+    padding:2px 7px 2px 4px;
+    border:2px solid white;
+}
+.mat-mdc-select-arrow-wrapper .mat-mdc-select-arrow .ng-tns-c2643520907-1{
+    color: white !important;
+}

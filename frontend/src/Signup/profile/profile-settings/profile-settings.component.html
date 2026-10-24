@@ -1,0 +1,42 @@
+
+<h4>Edit Profile</h4>
+<div class="Settings">  
+    <!-- Display user's current address if available -->
+    <div *ngIf="user1.address && !addingAddress">
+        <p><strong>Current Address:</strong> {{ user1.address }}</p>
+        <a class="btn btn-link" (click)="toggleAddingAddress()">Update Address</a>
+    </div>
+
+    <!-- Address Field -->
+    <div *ngIf="addingAddress || !user1.address">
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" class="form-control" [(ngModel)]="newAddress" placeholder="Enter Address">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="updateAddress()">
+            {{ user1.address ? 'Change Address' : 'Add Address' }}
+        </button>
+    </div>
+
+    <hr> <!-- Add a horizontal line for visual separation -->
+
+    <h4>Change Password</h4>
+    <div class="form-group">
+        <label for="currentPassword">Current Password:</label>
+        <input type="password" class="form-control" id="currentPassword" [(ngModel)]="currentPassword" placeholder="Enter Current Password">
+    </div>
+    <div class="form-group">
+        <label for="newPassword">New Password:</label>
+        <input type="password" class="form-control" id="newPassword" [(ngModel)]="newPassword" placeholder="Enter New Password">
+    </div>
+    <div class="form-group">
+        <label for="confirmNewPassword">Confirm New Password:</label>
+        <input type="password" class="form-control" id="confirmNewPassword" [(ngModel)]="confirmNewPassword" placeholder="Confirm New Password">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="updatePassword()">Update Password</button>
+</div>
+<div #notificationArea></div>
+
+<hr>
+

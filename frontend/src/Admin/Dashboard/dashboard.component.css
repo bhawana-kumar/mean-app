@@ -1,0 +1,64 @@
+* {
+	box-sizing: border-box;
+}
+
+.admin-panel {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.sidebarComponent {
+	width: 250px;
+}
+
+.header-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	/* position: relative; */
+	background-color: #141B25;   
+	color:white;      
+	position: sticky;
+	padding:5px 30px 5px 0px;
+	top:0px;
+	z-index: 1000;
+}
+
+.header-container button{
+	position: relative;
+	font-size: 16px;
+	left:0px;
+	color:white;
+}
+.header-container >div>span{
+	position: relative;
+	font-size: 18px;
+	top: 4px;
+	
+}
+
+mat-drawer-container mat-drawer-content .mat-drawer-content{
+	background-color: #1B2431;
+}
+
+/* main */
+.main {
+	width: 100%;
+	height: auto;
+	background-color: #1B2431;
+	position: relative;
+}
+
+/* Reesponsive */
+@media only screen and (max-width: 768px) {
+	.sidebarComponent {
+		width: 220px;
+	}
+}
+@media only screen and (max-width: 480px) {
+
+}

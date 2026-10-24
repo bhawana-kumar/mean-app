@@ -1,0 +1,30 @@
+<div class="vehicleContainer">
+    <mat-card class="vehicleCard" *ngFor="let vehicle of vehicleData">
+    
+        <div class="container">
+            <div class="image-container">
+                <img [src]="vehicle.carImg"
+                    alt="vehicleImage" class="image" style="width:100%">
+                <div class="middle">
+                    <div class="text">
+                       {{vehicle.description}} 
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="details">
+            <h2>{{vehicle.brandName }}<span>{{vehicle.carName}}</span> </h2> 
+            <p> Manufactured: {{vehicle.manufYear}}</p>
+            <p>Location: {{vehicle.location}}</p>
+            <p>Price: {{vehicle.price}}</p>
+            <p>Ownership: {{vehicle.ownerShip}}</p>
+            <p> Registration No:
+                {{vehicle.registration_number}}
+            </p>
+            <p>{{vehicle.status}}</p>
+
+        </div>
+
+    </mat-card>
+</div>

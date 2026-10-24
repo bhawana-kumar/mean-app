@@ -1,0 +1,146 @@
+*{
+    box-sizing: border-box;
+}
+.mainContainer {
+    background-color: #1B2431;
+  padding: 0px 3px;
+  height: auto;
+}
+
+.white{
+    color:white
+}
+.headerCM {
+    width: 100%;
+    padding: 5px 40px;
+    color: #2298F1;
+    margin:0px;
+    border-bottom: 2px solid #2298F1;
+    font: 400 24px / 32px Roboto, sans-serif;;
+}
+
+.mainContent {
+    padding: 15px 30px;
+    min-height: calc(100vh - 90px);
+
+}
+
+.align-center, .center {
+    text-align: center!important;
+}
+
+.nav-tabs {
+    padding-left: 20px;
+    padding-bottom: 10px;
+    margin-bottom:15px;
+   
+}
+.nav-item {
+    cursor: pointer;
+    color:white;
+}
+.nav-tabs .nav-link.active {
+   background-color: #1B2431;
+    color: #2298F1; 
+   border:none
+  }
+
+
+
+
+.nav-link mat-icon {
+    margin-right: 5px;
+    position: relative;
+    top:5px;
+}
+
+
+.profile-picture {
+    
+    border-radius: 5px;
+   
+    padding: 4px;
+    margin-bottom:14px;
+    display: inline-block;
+    max-width: 100%;
+    /* -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; */
+    box-sizing: border-box;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .15)
+}
+
+#avatar2{
+    width:100%;
+}
+
+.profile-user-info {
+    display: table;
+    /* width: 98%; */
+    width: calc(100% - 24px);
+    margin: 0 auto;
+}
+
+.profile-info-row {
+    display: table-row
+}
+.profile-info-role{
+    color: white;
+    background-color: transparent;
+    font-size: 14px;
+}
+
+.profile-info-name,
+.profile-info-value {
+    display: table-cell;
+    border-top: 1px dotted #2298F1
+}
+
+.profile-info-name {
+    text-align: right;
+    padding: 6px 10px 6px 4px;
+    font-weight: 400;
+    color: #2298F1;
+    background-color: transparent;
+    width: 110px;
+    vertical-align: middle
+}
+.white{
+    color:white;
+}
+.profile-info-value {
+    padding: 6px 4px 6px 6px;
+    color:white
+}
+
+.profile-info-value>span+span:before {
+    display: inline;
+    content: ",";
+    margin-left: 1px;
+    margin-right: 3px;
+    color: #666;
+    border-bottom: 1px solid #FFF
+}
+
+
+
+.profile-info-row:first-child .profile-info-name,
+.profile-info-row:first-child .profile-info-value {
+    border-top: none
+}
+
+.btnUserB{
+    background-color: #0a2e49;
+    color: white;
+}
+.btnUserB:hover {
+    background-color: #2298F1;
+}
+
+
+/* Orders */
+.noDataFound{
+    font-size: 26px;
+    padding:20px;
+    width: 100%;
+   text-align: center;
+}

@@ -1,0 +1,8 @@
+  /* Responsive Styles */
+  @media screen and (max-width: 600px) {
+    /* Hide app-search for smaller screens */
+    app-search {
+      display:none;
+    }
+  }
+  

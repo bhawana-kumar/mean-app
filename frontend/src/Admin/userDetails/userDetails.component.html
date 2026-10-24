@@ -1,0 +1,146 @@
+<div class="mainContainer ">
+    <h1 class="headerCM">User Details</h1>
+    <div class="mainContent">
+
+        <div class="tabbable">
+            <!-- navigation -->
+
+            <ul class="nav nav-tabs">
+                <li class="nav-item" (click)="showProfile()">
+                    <a class="nav-link" [class.active]="activeTab === 'profile'"><mat-icon>person</mat-icon>Profile</a>
+                </li>
+
+                <li class="nav-item" (click)="showOrders()" *ngIf="userRole === 'buyer'">
+                    <a class="nav-link" [class.active]="activeTab === 'orders'"><mat-icon>receipt</mat-icon>Orders</a>
+                </li>
+                <li class="nav-item" (click)="showOrders()" *ngIf="userRole === 'seller'">
+                    <a class="nav-link" [class.active]="activeTab === 'orders'"><mat-icon>receipt</mat-icon>Sells</a>
+                </li>
+                <li class="nav-item" (click)="showVehicles()" *ngIf="userRole === 'seller'">
+                    <a class="nav-link" [class.active]="activeTab === 'vehicles'"><mat-icon> directions_car</mat-icon>
+                        Vehicles</a>
+                </li>
+                <li class="nav-item" (click)="showReports()">
+                    <a class="nav-link"
+                        [class.active]="activeTab === 'reports'"><mat-icon>feedback</mat-icon>Reports</a>
+                </li>
+
+            </ul>
+
+            <div class="tab-content ">
+                <div id="profile" class="tab-pane in active" *ngIf="activeTab === 'profile'">
+                    <div class="row">
+                        <!-- profile left side -->
+                        <div class="col-xs-12 col-sm-3 center">
+                            <span class="profile-picture">
+                                <img alt=" Avatar" id="avatar2" src="https://i.pravatar.cc/300">
+                            </span>
+
+                            <button class="btn btn-sm btn-block btnUserB" *ngIf="accountStatus === 'active'"
+                                (click)="blockUserById()">
+                                Block User
+                            </button>
+                            <button class="btn btn-sm btn-block btnUserB" *ngIf="accountStatus === 'block'"
+                                (click)="unBlockUserById()">
+                                Unblock User
+                            </button>
+                            <button  class="btn btn-sm btn-block btnUserB"(click)="openDialog()" >
+                                Delete Acc
+                            </button>
+            
+                        </div>
+                        <div class="col-xs-12 col-sm-9">
+                            <h4 class="white">
+                                <span class="middle">{{userdata.username | uppercase}}</span>
+
+                                <span class="profile-info-role">
+                                    {{userdata.role | uppercase}}
+                                </span>
+                            </h4>
+
+                            <div class="profile-user-info">
+                                <div class="profile-info-row">
+                                    <div class="profile-info-name"> Username </div>
+
+                                    <div class="profile-info-value">
+                                        <span>{{userdata.username}}</span>
+                                    </div>
+                                </div>
+
+                                <div class="profile-info-row">
+                                    <div class="profile-info-name"> Status </div>
+
+                                    <div class="profile-info-value"
+                                        [ngStyle]="{ 'color': accountStatus=='active' ? 'green' : 'red' }">
+                                        
+                                        <span>{{userdata.status | uppercase}}</span>
+
+                                    </div>
+                                </div>
+
+                                <div class="profile-info-row">
+                                    <div class="profile-info-name"> Email </div>
+
+                                    <div class="profile-info-value">
+                                        <span>{{userdata.email}}</span>
+                                    </div>
+                                </div>
+
+                                <div class="profile-info-row">
+                                    <div class="profile-info-name"> Joined </div>
+
+                                    <div class="profile-info-value">
+                                        <span>{{userdata.createdAt | date}}</span>
+                                    </div>
+                                </div>
+
+                                <div class="profile-info-row">
+                                    <div class="profile-info-name"> Phone No </div>
+
+                                    <div class="profile-info-value">
+                                        <span>{{userdata.phone}}</span>
+                                    </div>
+                                </div>
+                                <div class="profile-info-row">
+                                    <div class="profile-info-name"> Address </div>
+
+                                    <div class="profile-info-value">
+                                        <span>{{userdata.address}}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div *ngIf="activeTab === 'orders'">
+                    <h2 *ngIf="userOrders.length" class="white">{{userOrders.length}} - Orders </h2>
+                    <div *ngIf="userOrders.length == 0" class="noDataFound white">
+                        No Orders Yet
+                    </div>
+                    <orderReceipt-component [receiptsData]="userOrders" *ngIf="userOrdersLoaded && userOrders.length"></orderReceipt-component>
+                </div>
+
+                <div *ngIf="activeTab === 'vehicles'">
+                    <h2 class="white">Sellers Vehicles Listed</h2>
+                    <div *ngIf="userVehicles.length == 0" class="noDataFound white">
+                        No Vehicles Yet
+                    </div>
+                    <vehicle-card [vehicleData]="userVehicles" *ngIf="userVehicles.length"></vehicle-card>
+                </div>
+
+                <div *ngIf="activeTab === 'reports'">
+                    <h2 style="color:white">Reports</h2>
+                    <report-card [reportsData]="userReports"></report-card>
+                </div>
+            
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

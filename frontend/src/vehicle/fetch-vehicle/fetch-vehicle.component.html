@@ -1,0 +1,30 @@
+<div *ngIf="vehicles.length > 0; else noVehicles">
+  <div *ngFor="let vehicle of vehicles" class="vehicle-card">
+    <div class="card">
+      <div class="card-header">
+        <div class="vehicle-image"><img src="{{ vehicle.carImg }}" alt="Image">
+        </div>
+        <div class="card-space"></div>
+        <div class="card-content">
+            <div><b>Brand: </b><b>{{ vehicle.brandName }} </b><p><b>Model: </b><b> {{ vehicle.carName }}</b></p></div>
+          <div class="card-subtitle"><b>Manufacturing Year: </b><b>{{ vehicle.manufYear }}</b></div>  
+          <p><strong>Ownership: </strong> <b>{{ vehicle.ownerShip }}</b></p>
+          <p><strong>Color: </strong><b>{{ vehicle.color }}</b></p>
+          <p><strong>Price: </strong> <b>{{ vehicle.price }}</b></p>
+          <p><strong>Status: </strong> <b>{{ vehicle.status }} </b></p>
+          <p><strong>Fuel Type: </strong> <b>{{ vehicle.fuelType }}</b></p>
+          <p *ngIf="vehicle.mileage"><strong>Mileage: </strong><b>{{ vehicle.mileage }}</b></p>
+          <p><strong>Body Type: </strong><b> {{ vehicle.bodyType }}</b></p>
+        </div>
+        <div class="card-actions">
+          <!-- <button class="button-primary" (click)="editVehicle(vehicle)">Edit</button> &nbsp;&nbsp; -->
+          <button *ngIf="vehicle.status == 'available'" class="button-danger" (click)="deleteVehicle(vehicle)">Remove Vehicle</button>
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>
+
+<ng-template #noVehicles>
+  <p>No vehicles found.</p>
+</ng-template>

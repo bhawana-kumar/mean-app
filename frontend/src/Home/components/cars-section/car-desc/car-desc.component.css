@@ -1,0 +1,244 @@
+@media screen and (max-width: 600px) {
+  .img-info-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .left-info, .right-info {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .img-info-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .left-info, .right-info {
+    width: 50%;
+  }
+}
+
+.img-info-container {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: silver;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.car-image {
+  width: 100%; 
+  height: auto;
+  border-radius: 25px;
+}
+
+.buynow {
+  background-color: #ff6600;
+  padding: 2% 5%;
+  border-radius: 5%;
+  color: white;
+  font-weight: bold;
+  border: none;
+  font-size: large;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.tech-info {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10%;
+}
+
+.left-info, .right-info {
+  flex: 1;
+}
+
+.right-info {
+  margin-left: 5%;
+}
+
+.left-info p, .right-info p {
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.car-desc {
+  background-color: #ffffff;
+  padding: 7%;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.car-desc h3 {
+  color: black;
+  margin-bottom: 10px;
+}
+
+.description-container {
+  height: 25%; 
+  width: 65%;
+  padding: 2%;
+  background-color: rgb(1, 1, 25);
+  color: white;
+}
+
+.car-details-main {
+  margin-left: 15%;
+}
+
+.car-details {
+  flex: 1;
+  padding: 20px;
+  margin-left: 5%;
+}
+
+.tech-info {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.tech-info-main, .car-desc {
+  background-color: whitesmoke;
+  box-shadow: 1px 1px rgba(128, 128, 128, 0.47);
+  margin: 1%;
+}
+
+.tech-info-main {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.key-specs {
+  margin-left: 33%;
+  font-weight: bolder;    
+}
+
+.car-details {
+  position: relative;
+}
+
+.flag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.report-btn {
+  position: absolute;
+  top: 50%;
+  right: 80px; 
+  transform: translate(50%, -50%);
+  background-color: white;
+  width: 95px;
+  border: 0.1px solid gray;
+}
+
+.report-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px; 
+}
+
+.report-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.report-form input[type="email"],
+.report-form textarea {
+  width: calc(100% - 22px); 
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.report-form button[type="submit"] {
+  width: calc(100% - 22px);
+  padding: 10px;
+  background-color: rgb(234, 81, 10);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.report-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.tooltip-name {
+  color: #ff6600;
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-name .tooltiptext {
+  visibility: hidden;
+  width: 450px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 5px;
+  position: absolute;
+  z-index: 1;
+  top: 125%;
+  left: 50%;
+  margin-left: 25%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-name.tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip-name:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.recommended-cars {
+  border-radius: 3%;
+  background-color: whitesmoke;
+  margin-bottom: 2%;
+}
+
+@media (max-width: 768px) {
+  .img-info-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 576px) {
+  .img-info-container {
+    padding: 10px;
+  }
+}

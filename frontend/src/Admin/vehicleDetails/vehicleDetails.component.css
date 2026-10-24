@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+}
+.mainContainer {
+    background-color: #1B2431;
+  padding: 0px 3px;
+  height: auto;
+}
+
+.headerCM {
+    width: 100%;
+    padding: 5px 40px;
+    color: #DA932C;
+    margin:0px;
+    border-bottom: 2px solid #DA932C;
+    font: 400 24px / 32px Roboto, sans-serif;;
+}
+.mat-yellow{
+    background-color: #DA932C;
+    color:white;
+}
+.mainContent {
+    padding: 15px 30px;
+    min-height: calc(100vh - 90px);
+}
+
+#deleteBtn{
+    position: absolute;
+    right:45px;
+}

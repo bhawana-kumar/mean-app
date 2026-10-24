@@ -1,0 +1,124 @@
+<div class="grid-container">
+  <!-- <h1 class="mat-h1">Dashboard</h1> -->
+  <mat-grid-list cols="{{ ( cardLayout | async )?.columns }}" rowHeight="200px">
+    <!--Mini Cards-->
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard?.cols"
+      [rowspan]="( cardLayout | async )?.miniCard?.rows">
+      <mini-card (click)="redirectTo('users')">
+        <div class="mini-card-container">
+						<div class="card blue">
+							<div class="title">Users</div>
+							<div class="zmdi" >
+                <img src="../../assets/images/increase.png" alt="userGrowth">
+              </div>
+							<div class="value"> {{usersData.length}}</div>
+							<div class="stat"><b>13</b>% increase</div>
+						</div>
+				
+        </div>
+
+      </mini-card>
+       
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard?.cols"
+      [rowspan]="( cardLayout | async )?.miniCard?.rows">
+      <mini-card (click)="redirectTo('orders')">
+        <div class="mini-card-container">
+						<div class="card green">
+							<div class="title">Total Sales Value</div>
+							<div class="zmdi" >
+                <img src="../../assets/images/sales.png" alt="userGrowth">
+              </div>
+							<div class="value">{{totalRevenue | currency: 'INR' }}</div>
+							<div class="stat"><b>13</b>% increase</div>
+						</div>
+        </div>
+
+      </mini-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard?.cols"
+      [rowspan]="( cardLayout | async )?.miniCard?.rows">
+      <mini-card (click)="redirectTo('vehicles')">
+        <div class="mini-card-container">
+
+        
+        <div class="card orange">
+          <div class="title">Sold Vehicles</div>
+          <div class="zmdi" >
+            <img src="../../assets/images/sold.png" alt="userGrowth">
+          </div>
+          <div class="value">{{ordersData.length}}</div>
+          <div class="stat"><b>13</b>% decrease</div>
+        </div>
+      </div>
+      </mini-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="( cardLayout | async )?.miniCard?.cols"
+      [rowspan]="( cardLayout | async )?.miniCard?.rows">
+     
+      <mini-card (click)="redirectTo('reports')">
+        <div class="mini-card-container">
+        <div class="card red">
+          <div class="title">Reports</div>
+          <div class="zmdi" >
+            <img src="../../assets/images/email.png" alt="userGrowth">
+          </div>
+          <div class="value">{{unResolvedReports}}</div>
+          <div class="stat"><b>13</b>% decrease</div>
+        </div>
+      </div>
+      </mini-card>
+     
+    </mat-grid-tile>
+    <!--Charts-->
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols" [rowspan]="( cardLayout | async )?.chart?.rows">
+      <app-card title="No Of Users By Month">
+        <line-chart *ngIf="linedataLoaded" [linedata]="usersData"></line-chart>
+      </app-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="( cardLayout | async )?.chart?.cols" [rowspan]="( cardLayout | async )?.chart?.rows">
+      <app-card title="Orders By Status">
+        <pie-chart-demo *ngIf="orderdataLoaded" [piedata]="pieDataArray"></pie-chart-demo>
+      </app-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="( cardLayout | async )?.bigchart?.cols"
+      [rowspan]="( cardLayout | async )?.bigchart?.rows">
+      <app-card title="Vehicles: {{vehiclesData.length}}">
+        <bar-chart *ngIf="vehicledataLoaded" [bardata]="vehiclesData"></bar-chart>
+      </app-card>
+    </mat-grid-tile>
+<mat-grid-tile class="imageContainer" [colspan]="( cardLayout | async )?.miniCard?.cols" [rowspan]="( cardLayout | async )?.chart?.rows">
+  <div class="imageContainer">
+    <img  src="../../assets/images/web-analysis.png" alt="analysis Image">
+  </div>
+   </mat-grid-tile>
+
+
+    <!--Table-->
+    <mat-grid-tile [colspan]="( cardLayout | async )?.table?.cols" [rowspan]="( cardLayout | async )?.table?.rows">
+      <app-card title="Top Sellers">
+        <div class="userInfoContainer">
+          <table class="userInfoTable">
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Sales</th>
+            </tr>
+
+            <tr class="userRows" *ngFor="let user of sellersData" (click)="UserDetails(user.sellerId)">
+              <td>
+                {{user.username | uppercase}}
+              </td>
+              <td>{{user.email}}</td>
+              <td>{{user.phone}}</td>
+              <td>{{user.totalSells}}</td>
+            </tr>
+          </table>
+        </div>
+      </app-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

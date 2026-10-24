@@ -1,0 +1,29 @@
+<div>
+  <app-header></app-header>
+</div>
+
+<div class="report-img">
+<form class="report-form" (ngSubmit)="submitForm()" #reportForm="ngForm">
+
+  <div class="form-group">
+    <label for="registration_number">Vehicle Reg.No.:</label>
+    <input type="text" id="registration_number" name="registration_number" class="form-control" [value]="car.registration_number" required disabled>
+  </div>
+  
+    <div class="form-group">
+      <label for="buyerName">Buyer Name:</label>
+      <input type="text" id="buyerName" name="buyerName" class="form-control" [(ngModel)]="report.buyerName" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="comment">Comment:</label>
+        <input type="text" id="comment" name="comment" class="form-control" [(ngModel)]="report.comment" required>
+      </div>
+      
+      <button type="submit" class="btn btn-primary" [disabled]="reportForm.invalid">Submit</button>
+    </form>
+  </div>
+
+  <div>
+    <app-footer></app-footer>
+  </div>

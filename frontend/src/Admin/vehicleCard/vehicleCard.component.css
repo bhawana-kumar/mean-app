@@ -1,0 +1,81 @@
+.vehicleContainer {
+    margin: 20px 5px;
+}
+
+.vehicleCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap:30px;
+    align-items: center;
+    height: 400px;
+    padding:0px 30px;
+    background-color: #1B2431;
+}
+
+.container {
+    position: relative;
+}
+
+.image-container {
+    width:500px;
+    height: auto;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.middle {
+    transition: .3s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.container:hover .image {
+    opacity: 0.6;
+}
+
+.container:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    width: 100%;
+    height: auto;
+    background-color: #5f5959;
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    line-height: 1;
+    padding: 16px 32px;
+    border-radius: 10px;
+
+}
+
+.details {
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 16px;
+    width: 50%;
+    height: auto;
+    color: whitesmoke;
+
+}
+.details > h2 >span {
+    font-size: 12px;
+    font-weight: 400;
+}

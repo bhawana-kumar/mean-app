@@ -1,0 +1,32 @@
+<div class="popular-brands">
+  <h2>Popular Brands</h2>
+  <div class="brands-grid">
+    <div *ngFor="let brand of brands" class="brand" (click)="filterVehicles(brand.name)"
+      (keyup.enter)="filterVehicles(brand.name)" tabindex="0">
+      <img [src]="brand.image" [alt]="brand.name">
+      <p>{{ brand.name }}</p>
+    </div>
+  </div>
+</div>
+
+<div class="row tm-mb-90 tm-gallery" *ngIf="vehicles.length > 0">
+  <div class="row">
+    <div class="col-12">
+      <!-- <h2 class="tm-text-primary mt-3">Search Result for {{vehicles.value}}</h2> -->
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-5" *ngFor="let vehicle of vehicles">
+    <figure class="effect-ming tm-video-item">
+      <img [src]="vehicle['carImg']" alt="Image" class="img-fluid">
+      <figcaption class="d-flex align-items-center justify-content-center">
+        <h2>{{ vehicle['brandName'] }}</h2>
+        <a href="photo-detail.html">View more</a>
+      </figcaption>
+    </figure>
+    <div class="d-flex justify-content-between tm-text-gray">
+      <span class="tm-text-gray-light">{{ vehicle['carName'] }}</span>
+      <span>{{ vehicle['price'] }}</span>
+
+    </div>
+  </div>
+</div>

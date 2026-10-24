@@ -1,0 +1,34 @@
+/*card.component.css*/
+
+ 
+ .dashboard-card {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    background-color: #1B2431;
+    /* background-color: rgb(201, 171, 171); */
+
+    border: 1px solid rgb(225, 215, 215);
+ }
+.title{
+   color:white;
+   font-size: 16px;
+}
+ 
+ .dashboard-card-content {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 100%;
+    justify-content: flex-end;
+    align-items:stretch;
+ }
+ 
+ mat-card {
+    display: flex;
+    flex-direction: column;
+ }

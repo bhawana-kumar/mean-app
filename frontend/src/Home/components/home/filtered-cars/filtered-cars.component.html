@@ -1,0 +1,45 @@
+<!-- <p>
+  filtered-cars works!
+</p> -->
+<app-header></app-header>
+
+<div *ngIf="vehicles.length > 0; else noResultsTemplate" class="mt-5">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-12" *ngFor="let vehicle of vehicles">
+        <div class="card mb-3 shadow-sm vehicle-card">
+          <div class="row g-0 align-items-center">
+            <div class="col-md-4"> 
+
+              <img [src]="vehicle.carImg" [alt]="vehicle.carName" class="img-fluid rounded-start"
+                style="width: 100%; height: auto;">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+
+                <h3 class="card-title"><strong>{{ vehicle.carName }}</strong></h3>
+
+                <h3 class="card-text"><strong>Price:</strong> {{ vehicle.price}}</h3 >
+                <h5 class="card-text"><strong>Manufacture Year:</strong> {{ vehicle.manufYear}}</h5>
+                <h5 class="card-text"><strong>Engine:</strong> {{ vehicle.engine}}</h5 >
+                <h5 class="card-text"><strong>Power:</strong> {{ vehicle.power}}</h5 >
+                
+                <a (click)="goToCardDetail(vehicle._id)" class="btn btn-primary btn-lg">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #noResultsTemplate>
+  <div class="text-center mt-5">
+    <h3>No vehicles found.</h3>
+  </div>
+</ng-template> 
+
+<app-footer></app-footer>

@@ -1,0 +1,164 @@
+/* @import "https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/dashboard.scss"; */
+.grid-container {
+  padding: 10px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+.mini-card-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items:flex-start;
+}
+
+
+
+/* table */
+.userInfoContainer {
+  height: 100%;
+  padding: 20px 5px;
+  overflow-y: auto;
+  text-align: left;
+}
+
+.userInfoTable {
+  margin: auto;
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  color:white;
+}
+
+
+
+table td,
+table th {
+  padding: 10px;
+  /* border:1px solid black; */
+
+}
+
+table tr:nth-child(odd) {
+  background-color: #3a3a3a; 
+}
+
+table tr:nth-child(even) {
+  background-color: #2e2e2e; 
+}
+
+
+
+th {
+  background: #6C7AE0;
+  color: white;
+
+}
+
+table .userRows:hover {
+  color: #c2caff;
+  
+  cursor: pointer;
+}
+
+
+/* mini Card css */
+
+.card {
+	border-radius: 8px;
+	color: white;
+	padding: 10px;
+	position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+	.zmdi{
+    position: absolute;
+    top:25px;
+    left:15px;
+		height: 40px;
+    width: 40px;
+   color:white;
+	}
+  .zmdi > img{
+    height: 100%;
+  }
+	
+	.stat {
+		border-top: 1px solid rgba(255, 255, 255, 0.3);
+		font-size: 10px;
+		margin-top: 25px;
+		padding: 10px 10px 0;
+		text-transform: uppercase;
+	}
+	
+	.title {
+		display: inline-block;
+		font-size: 12px;
+		padding: 10px 10px 0;
+		text-transform: uppercase;
+	}
+	
+	.value {
+		font-size: 28px;
+		padding: 0 10px;
+	}
+	
+	&.blue {
+		background-color: #2298F1;
+	}
+	
+	&.green {
+		background-color: #66B92E;
+	}
+	
+	&.orange {
+		background-color: #DA932C;
+	}
+	
+	&.red {
+		background-color: #D65B4A;
+	}
+}
+
+/* image */
+
+.imageContainer > img {
+ 
+  width: 100%;
+  height: auto;
+}
+
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+	.imageContainer{
+    display: none;
+    border: 2px solid red;
+  }
+
+
+}
+
+@media only screen and (max-width: 480px) {
+  .imageContainer{
+    display: none;
+  }
+}
